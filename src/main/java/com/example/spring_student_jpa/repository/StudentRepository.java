@@ -23,7 +23,7 @@ public interface StudentRepository  extends CrudRepository<Student,Long> {
     void insertInNative(@Param("id") Long id, @Param("email") String email, @Param("name") String name);
 
     @Modifying
-    @Query(value = "update tbl_student u set u.email = ?, u.name = ?  where u.id = ?",
+    @Query(value = "update tbl_student s set s.email = ?, s.name = ?  where s.id = ?",
             nativeQuery = true)
     int updateInNative(String email, String name, Long id);
 
