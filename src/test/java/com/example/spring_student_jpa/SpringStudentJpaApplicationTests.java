@@ -21,7 +21,7 @@ class SpringStudentJpaApplicationTests {
 
     @Test
     private void insertStudent(){
-        Student student=Student.builder().id(12L).name("tran nghia").email("nghia2knt@gmail.com").build();
+        Student student=Student.builder().name("tran nghia").email("nghia2knt@gmail.com").build();
         studentRepository.save(student);
     }
 
@@ -32,14 +32,14 @@ class SpringStudentJpaApplicationTests {
     }
 
     @Test
-    private void getStudentById(){
-        Optional<Student> student = studentRepository.findById(12L);
+    private void getStudentById(Long id){
+        Optional<Student> student = studentRepository.findById(id);
         System.out.println("Student: " + student);
     }
 
     @Test
-    private void deleteStudentById(){
-        studentRepository.deleteById(12L);
+    private void deleteStudentById(Long id){
+        studentRepository.deleteById(id);
         System.out.println("deleted!");
     }
 
