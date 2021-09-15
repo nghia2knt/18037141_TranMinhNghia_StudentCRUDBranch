@@ -40,9 +40,8 @@ class SpringStudentJpaApplicationTests {
 
     @Test
     public void deleteStudentById(){
-        Long id = 12L;
-        studentRepository.deleteById(id);
-        System.out.println("deleted id  "+id );
+        studentRepository.deleteAll();
+        System.out.println("deleted All");
     }
 
 }
