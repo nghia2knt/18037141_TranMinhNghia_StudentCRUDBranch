@@ -20,25 +20,27 @@ class SpringStudentJpaApplicationTests {
     // test các repo
 
     @Test
-    private void insertStudent(){
+    public void insertStudent(){
         Student student=Student.builder().name("tran nghia").email("nghia2knt@gmail.com").build();
         studentRepository.save(student);
     }
 
     @Test
-    private void printAllStudent(){
+    public void printAllStudent(){
         List<Student> studentList = (List<Student>) studentRepository.findAll();
         System.out.println("List Student: " +studentList);
     }
 
     @Test
-    private void getStudentById(Long id){
+    public void getStudentById(){
+        Long id = 12L;
         Optional<Student> student = studentRepository.findById(id);
         System.out.println("Student: " + student);
     }
 
     @Test
-    private void deleteStudentById(Long id){
+    public void deleteStudentById(){
+        Long id = 12L;
         studentRepository.deleteById(id);
         System.out.println("deleted id  "+id );
     }
